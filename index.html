@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maan Selati — Cybersecurity Student</title>
+<meta name="description" content="Resume and portfolio of Maan Selati, Cybersecurity Student at Umm Al-Qura University.">
+<meta name="theme-color" content="#f3efe4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f3efe4;
+    --panel:#faf8f2;
+    --border:#e3dccb;
+    --border-soft:#eae4d5;
+    --text:#211f1a;
+    --text-dim:#6d6659;
+    --text-faint:#9a927f;
+    --accent:#1f6f5c;
+    --accent-soft:#e4ede9;
+    --max:920px;
+    --radius:4px;
+    --sans:'Inter', system-ui, sans-serif;
+    --disp:'Space Grotesk', sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  ::selection{background:var(--accent);color:#fff;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  nav.top{
+    position:sticky;
+    top:0; z-index:50;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:20px 32px;
+    background:rgba(243,239,228,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  nav.top .brand{
+    font-family:var(--disp);
+    font-weight:600;
+    font-size:0.98rem;
+    color:var(--text);
+  }
+  nav.top .brand span{color:var(--text-faint); font-weight:500; font-size:0.85rem;}
+  nav.top .links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+    font-size:0.86rem;
+    color:var(--text-dim);
+  }
+  nav.top .links a{color:var(--text-dim);}
+  nav.top .links a:hover{color:var(--accent); text-decoration:none;}
+  nav.top .links a.active{color:var(--accent);}
+  nav.top .cta{
+    border:1px solid var(--text);
+    padding:7px 16px;
+    border-radius:20px;
+    font-size:0.82rem;
+    font-weight:500;
+    color:var(--text);
+  }
+  nav.top .cta:hover{background:var(--text); color:var(--bg); text-decoration:none;}
+  @media (max-width:760px){ nav.top .links{display:none;} }
+
+  main{max-width:var(--max); margin:0 auto; padding:0 32px;}
+
+  header.hero{
+    padding:90px 0 40px;
+  }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:0.8rem;
+    color:var(--accent);
+    letter-spacing:0.04em;
+    margin-bottom:18px;
+  }
+  header.hero h1{
+    font-family:var(--disp);
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    font-weight:700;
+    margin:0 0 14px;
+    letter-spacing:-0.01em;
+    max-width:14ch;
+  }
+  .role-line{
+    font-size:clamp(1.05rem, 2vw, 1.25rem);
+    color:var(--text-dim);
+    max-width:52ch;
+    min-height:1.6em;
+  }
+  .role-line .cursor{
+    display:inline-block;
+    width:2px;height:1.1em;
+    background:var(--accent);
+    margin-left:2px;
+    vertical-align:middle;
+    animation:blink 1s step-end infinite;
+  }
+  @keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+
+  /* quick access */
+  .quick-access{
+    margin-top:52px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--border);
+    border-left:1px solid var(--border);
+  }
+  .qa-item{
+    border-right:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+    padding:18px 18px 20px;
+    transition:background .2s;
+  }
+  .qa-item:hover{background:var(--panel);}
+  .qa-item .n{
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--text-faint);
+    display:block;
+    margin-bottom:10px;
+  }
+  .qa-item .t{
+    font-weight:600;
+    font-size:0.92rem;
+    color:var(--text);
+    display:block;
+    margin-bottom:3px;
+  }
+  .qa-item .d{
+    font-size:0.78rem;
+    color:var(--text-faint);
+  }
+  .qa-item a.wrap{color:inherit; display:block;}
+  .qa-item a.wrap:hover{text-decoration:none;}
+  .qa-item a.wrap:hover .t{color:var(--accent);}
+  @media (max-width:640px){
+    .quick-access{grid-template-columns:repeat(2,1fr);}
+  }
+
+  section{
+    padding:72px 0;
+    border-bottom:1px solid var(--border-soft);
+  }
+  section:last-of-type{border-bottom:none;}
+
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:32px;
+  }
+  .sec-head .num{
+    font-family:var(--mono);
+    font-size:0.78rem;
+    color:var(--text-faint);
+  }
+  .sec-head h2{
+    font-family:var(--disp);
+    font-size:1.5rem;
+    font-weight:600;
+    margin:0;
+    color:var(--text);
+  }
+
+  .prose{color:var(--text-dim); font-size:1rem; max-width:68ch;}
+
+  /* education */
+  .edu-block{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:24px;
+  }
+  .edu-block .when{
+    font-family:var(--mono);
+    font-size:0.82rem;
+    color:var(--text-faint);
+    padding-top:3px;
+  }
+  .edu-block h3{
+    font-family:var(--disp);
+    font-size:1.15rem;
+    font-weight:600;
+    margin:0 0 4px;
+    color:var(--text);
+  }
+  .edu-block .school{color:var(--accent); font-size:0.92rem; margin-bottom:14px;}
+  .edu-block p{color:var(--text-dim); font-size:0.95rem; max-width:64ch;}
+  .gpa-line{
+    margin-top:14px;
+    font-family:var(--mono);
+    font-size:0.82rem;
+    color:var(--text-dim);
+  }
+  .gpa-line b{color:var(--accent);}
+  @media (max-width:600px){
+    .edu-block{grid-template-columns:1fr; gap:8px;}
+  }
+
+  /* skills — grouped chips */
+  .skill-groups{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:36px;
+  }
+  .skill-group .g-label{
+    font-family:var(--mono);
+    font-size:0.76rem;
+    color:var(--text-faint);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    margin-bottom:14px;
+  }
+  .chip-row{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    border:1px solid var(--border);
+    background:var(--panel);
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:0.84rem;
+    color:var(--text);
+  }
+
+  /* credentials */
+  .cred-list{display:flex; flex-direction:column;}
+  .cred-row{
+    display:grid;
+    grid-template-columns:1fr 200px;
+    gap:12px;
+    padding:18px 0;
+    border-top:1px solid var(--border-soft);
+    align-items:baseline;
+  }
+  .cred-list .cred-row:first-child{border-top:none;}
+  .cred-row h4{
+    font-family:var(--disp);
+    font-size:1rem;
+    font-weight:600;
+    margin:0;
+    color:var(--text);
+  }
+  .cred-row .issuer{
+    font-family:var(--mono);
+    font-size:0.8rem;
+    color:var(--text-faint);
+    text-align:right;
+  }
+  @media (max-width:560px){
+    .cred-row{grid-template-columns:1fr;}
+    .cred-row .issuer{text-align:left;}
+  }
+
+  /* projects */
+  .project-card{
+    border:1px solid var(--border);
+    background:var(--panel);
+    border-radius:var(--radius);
+    padding:28px;
+  }
+  .project-card .tag{
+    display:inline-block;
+    font-family:var(--mono);
+    font-size:0.72rem;
+    color:var(--accent);
+    background:var(--accent-soft);
+    padding:4px 10px;
+    border-radius:20px;
+    margin-bottom:14px;
+  }
+  .project-card h3{
+    font-family:var(--disp);
+    font-size:1.2rem;
+    font-weight:600;
+    margin:0 0 10px;
+    color:var(--text);
+  }
+  .project-card p{color:var(--text-dim); font-size:0.95rem; margin:0 0 16px; max-width:66ch;}
+  .project-card .techs{display:flex; flex-wrap:wrap; gap:8px;}
+  .project-card .techs span{
+    font-family:var(--mono);
+    font-size:0.74rem;
+    color:var(--text-dim);
+    border:1px solid var(--border);
+    padding:3px 9px;
+    border-radius:4px;
+  }
+
+  /* languages */
+  .lang-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 0;
+    border-top:1px solid var(--border-soft);
+  }
+  .lang-row:first-child{border-top:none;}
+  .lang-row .name{font-family:var(--disp); font-weight:600; font-size:1rem; color:var(--text);}
+  .lang-row .level{font-family:var(--mono); font-size:0.82rem; color:var(--text-faint);}
+
+  /* contact / footer */
+  .contact-cta{
+    padding:80px 0 60px;
+    text-align:center;
+  }
+  .contact-cta h2{
+    font-family:var(--disp);
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    font-weight:700;
+    margin:0 0 20px;
+  }
+  .contact-cta .links{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:28px;
+  }
+  .contact-cta .links a{
+    border:1px solid var(--text);
+    padding:11px 22px;
+    border-radius:24px;
+    font-size:0.88rem;
+    font-weight:500;
+    color:var(--text);
+  }
+  .contact-cta .links a:hover{background:var(--text); color:var(--bg); text-decoration:none;}
+  .contact-cta .links a.primary{background:var(--accent); border-color:var(--accent); color:#fff;}
+  .contact-cta .links a.primary:hover{opacity:0.9; background:var(--accent); color:#fff;}
+
+  footer{
+    text-align:center;
+    padding:28px 24px 50px;
+    color:var(--text-faint);
+    font-size:0.8rem;
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="brand">Maan Selati <span>— Cybersecurity</span></div>
+  <div class="links">
+    <a href="#profile">Profile</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#credentials">Credentials</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="cta" href="#contact">Get in touch ↗</a>
+</nav>
+
+<main>
+  <header class="hero">
+    <div class="eyebrow">Cybersecurity Student · Umm Al-Qura University</div>
+    <h1>Maan Selati</h1>
+    <div class="role-line" id="typedRole">&nbsp;<span class="cursor"></span></div>
+
+    <div class="quick-access">
+      <div class="qa-item">
+        <a class="wrap" href="mailto:MaanSelati@hotmail.com">
+          <span class="n">01</span>
+          <span class="t">Email</span>
+          <span class="d">MaanSelati@hotmail.com</span>
+        </a>
+      </div>
+      <div class="qa-item">
+        <a class="wrap" href="tel:+966555439345">
+          <span class="n">02</span>
+          <span class="t">Phone</span>
+          <span class="d">+966 55 543 9345</span>
+        </a>
+      </div>
+      <div class="qa-item">
+        <a class="wrap" href="https://www.linkedin.com/in/maan-selati-aa042b321/" target="_blank" rel="noopener">
+          <span class="n">03</span>
+          <span class="t">LinkedIn</span>
+          <span class="d">Professional profile</span>
+        </a>
+      </div>
+      <div class="qa-item">
+        <a class="wrap" href="Maan-Selati-Resume.pdf" target="_blank" rel="noopener">
+          <span class="n">04</span>
+          <span class="t">Download Resume</span>
+          <span class="d">PDF</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="profile">
+    <div class="sec-head"><span class="num">01</span><h2>Profile</h2></div>
+    <p class="prose">
+      Cybersecurity student with a strong interest in defensive security and security operations.
+      Academic and hands-on experience in network and system security, monitoring and traffic
+      analysis, vulnerability assessment, and incident analysis. Familiar with blue-team workflows,
+      including detection, investigation, and security reporting, with a baseline understanding of
+      offensive security through penetration testing labs.
+    </p>
+  </section>
+
+  <section id="education">
+    <div class="sec-head"><span class="num">02</span><h2>Education</h2></div>
+    <div class="edu-block">
+      <div class="when">08/2023 —<br>Present</div>
+      <div>
+        <h3>Bachelor's in Cybersecurity</h3>
+        <div class="school">Umm Al-Qura University</div>
+        <p>
+          Coursework covered network security, system and application security, ethical hacking,
+          vulnerability assessment, cryptography fundamentals, security planning and policy, and
+          secure system design. Gained hands-on experience with penetration testing labs, Linux
+          environments, network scanning and exploitation tools, threat modeling, and incident
+          analysis, alongside practical projects involving secure web systems, databases, and
+          network configurations. Studies emphasized both the technical and managerial aspects of
+          cybersecurity, including risk management, security governance, and organizational
+          security planning.
+        </p>
+        <div class="gpa-line">GPA — <b>3.78</b> / 4.00</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><span class="num">03</span><h2>Skills</h2></div>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <div class="g-label">Security &amp; Networking</div>
+        <div class="chip-row">
+          <span class="chip">Vulnerability Assessment &amp; Exploitation</span>
+          <span class="chip">Nmap — Scanning &amp; Enumeration</span>
+          <span class="chip">Wireshark — Traffic Analysis</span>
+          <span class="chip">Cryptography Fundamentals</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="g-label">Scripting &amp; Data</div>
+        <div class="chip-row">
+          <span class="chip">Bash Scripting</span>
+          <span class="chip">SQL Fundamentals</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="sec-head"><span class="num">04</span><h2>Credentials</h2></div>
+    <div class="cred-list">
+      <div class="cred-row">
+        <h4>eJPT — Junior Penetration Tester</h4>
+        <div class="issuer">INE · 2026</div>
+      </div>
+      <div class="cred-row">
+        <h4>Cybersecurity Concepts and Fundamentals</h4>
+        <div class="issuer">Dimensions Group · 2022</div>
+      </div>
+      <div class="cred-row">
+        <h4>IELTS Academic — Band Score 7</h4>
+        <div class="issuer">2021</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head"><span class="num">05</span><h2>Projects</h2></div>
+    <div class="project-card">
+      <span class="tag">University Project</span>
+      <h3>Threat Modeling using STRIDE and LINDDUN</h3>
+      <p>
+        Applied STRIDE and LINDDUN threat modeling techniques to analyze system and data-flow
+        diagrams. Identified security and privacy threats and proposed mitigation strategies as
+        part of course assignments.
+      </p>
+      <div class="techs">
+        <span>STRIDE</span>
+        <span>LINDDUN</span>
+        <span>Data-flow Diagramming</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="languages" style="padding-bottom:0;">
+    <div class="sec-head"><span class="num">06</span><h2>Languages</h2></div>
+    <div class="lang-row"><span class="name">English</span><span class="level">Bilingual</span></div>
+    <div class="lang-row"><span class="name">Arabic</span><span class="level">Native</span></div>
+  </section>
+
+  <section id="contact" style="border-bottom:none;">
+    <div class="contact-cta">
+      <h2>Let's talk.</h2>
+      <p class="prose" style="margin:0 auto; text-align:center;">Open to internships and entry-level opportunities in security operations and defensive security.</p>
+      <div class="links">
+        <a class="primary" href="mailto:MaanSelati@hotmail.com">Email me ↗</a>
+        <a href="https://www.linkedin.com/in/maan-selati-aa042b321/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="Maan-Selati-Resume.pdf" target="_blank" rel="noopener">Download Resume ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Maan Selati. Built with HTML, CSS &amp; JS, deployed on GitHub Pages.
+</footer>
+
+<script>
+  // Typing role line
+  (function(){
+    const el = document.getElementById('typedRole');
+    const phrases = [
+      "Aspiring security analyst focused on blue-team operations.",
+      "Building a foundation in network defense and incident analysis.",
+      "Hands-on with Nmap, Wireshark, and penetration testing labs."
+    ];
+    let pIdx = 0, cIdx = 0, deleting = false;
+    const cursor = '<span class="cursor"></span>';
+    function tick(){
+      const current = phrases[pIdx];
+      if(!deleting){
+        cIdx++;
+        el.innerHTML = current.slice(0, cIdx) + cursor;
+        if(cIdx === current.length){ deleting = true; setTimeout(tick, 1800); return; }
+      } else {
+        cIdx--;
+        el.innerHTML = current.slice(0, cIdx) + cursor;
+        if(cIdx === 0){ deleting = false; pIdx = (pIdx+1) % phrases.length; }
+      }
+      setTimeout(tick, deleting ? 18 : 28);
+    }
+    tick();
+  })();
+
+  // active nav link
+  (function(){
+    const links = document.querySelectorAll('nav.top .links a');
+    const map = {};
+    links.forEach(l=>{ map[l.getAttribute('href').slice(1)] = l; });
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        const link = map[e.target.id];
+        if(!link) return;
+        if(e.isIntersecting){
+          links.forEach(l=>l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    }, {threshold:0.5});
+    document.querySelectorAll('main section').forEach(s=>io.observe(s));
+  })();
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
